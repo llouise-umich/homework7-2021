@@ -31,11 +31,10 @@ document.querySelector("#slower").addEventListener("click", function() {
 
  document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
-	console.log(video)
-	console.log(video.duration)
-	console.log(video.currentTime)
 	video.currentTime += 15
-	if (video.duration > video.currentTime){
+	console.log(video.duration)
+	if (video.duration <= video.currentTime){
+		console.log("here")
 		video.currentTime = 0
 		video.play()
 	}
