@@ -4,8 +4,6 @@ window.addEventListener("load", function() {
 	video = document.querySelector("#player1");
 	volume = document.querySelector("#volume");
 	console.log("Good job opening the window")
-	console.log(video)
-	video.play()
 
 });
 
@@ -33,20 +31,26 @@ document.querySelector("#slower").addEventListener("click", function() {
 
  document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip Ahead");
+	console.log(video)
+	console.log(video.duration)
+	console.log(video.currentTime)
+	video.currentTime += 15
 	if (video.duration > video.currentTime){
-		video.currentTime = 15
+		video.currentTime = 0
 		video.play()
 	}
+	console.log(video.currentTime)
  })
 
  document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute");
 	if (video.muted === false) { 
 		video.muted = true;
+		document.querySelector("#mute").innerHTML = "Unmute"
  	}
-
  	else {
 	 video.muted = false;
+	 document.querySelector("#mute").innerHTML = "Mute"
  	}
 
  });
